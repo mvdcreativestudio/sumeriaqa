@@ -86,9 +86,9 @@ class ContabilidadController extends Controller
     public function editar(Request $request, $id)
     {
     // Obtener el contabilidad a editar
-    $contabilidad = Contabilidad::findOrFail($id);
+    $movimiento = Contabilidad::findOrFail($id);
 
-    return view('admin.contabilidad.editar', compact('contabilidad'));
+    return view('admin.contabilidad.editar', compact('movimiento'));
     }
 
 
@@ -102,17 +102,17 @@ class ContabilidadController extends Controller
         'tipo' => 'required',
     ]);
 
-    // Obtener el contabilidad a actualizar
-    $contabilidad = Contabilidad::findOrFail($id);
+    // Obtener el movimiento a actualizar
+    $movimiento = Contabilidad::findOrFail($id);
 
     // Actualizar los campos del contabilidad con los datos del formulario
-    $contabilidad->nombre_cliente = $request->input('nombre_cliente');
-    $contabilidad->concepto = $request->input('concepto');
-    $contabilidad->monto = $request->input('monto');
-    $contabilidad->tipo = $request->input('tipo');
+    $movimiento->nombre_cliente = $request->input('nombre_cliente');
+    $movimiento->concepto = $request->input('concepto');
+    $movimiento->monto = $request->input('monto');
+    $movimiento->tipo = $request->input('tipo');
 
     // Guardar los cambios en la base de datos
-    $contabilidad->save();
+    $movimiento->save();
 
     // Redirigir a la página de visualización del contabilidad o a donde desees
     return redirect()->route('admin.contabilidad.index')->with('success', 'contabilidad actualizado exitosamente');

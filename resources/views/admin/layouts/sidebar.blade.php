@@ -167,7 +167,7 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>contabilidad</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.contabilidad.index']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.index') }}">Dashboard</a></li>
-                    <li class="{{ setActive(['admin.contabilidad.transactions']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.transactions') }}">Todos los contabilidad</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.transactions']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.transactions') }}">Todos los movimientos</a></li>
                     <li class="{{ setActive(['admin.contabilidad.incomes']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.incomes') }}">Ingresos</a></li>
                     <li class="{{ setActive(['admin.contabilidad.expenses']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.expenses') }}">Egresos</a></li>
                 </ul>
