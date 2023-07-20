@@ -159,15 +159,27 @@
             @endif
 
             @if($modulos['contabilidad']->enabled)
-            <!-- Header: Administrador de Pagos -->
-            <li class="menu-header">Administrador de Pagos</li>
+            <!-- Header: Contabilidad -->
+            <li class="menu-header">Contabilidad</li>
 
 
-            <!-- Contabilidad -->
-            <li class="dropdown {{ setActiveExcept(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario'], 'admin.contabilidad.*') }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>Contabilidad</span></a>
+            <!-- Dashboard -->
+            <li><a class="nav-link {{ setActive(['admin.contabilidad.*']) }}" href="{{ route('admin.contabilidad.index') }}"><i class="fas fa-chart-line"></i><span>Dashboard</span></a></li>
+
+            <!-- Ordenes -->
+            <li class="dropdown {{ setActiveExcept(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario', 'admin.contabilidad.index', 'admin.contabilidad.transactions', 'admin.contabilidad.incomes', 'admin.contabilidad.expenses'], 'admin.contabilidad.*') }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-invoice-dollar"></i><span>Órdenes</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ setActive(['admin.contabilidad.index']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.index') }}">Dashboard</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.ordenes-dashboard']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-dashboard') }}">Todas las órdenes</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.ordenes-cobro']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-cobro') }}">Órdenes de cobro</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.ordenes-pago']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-pago') }}">Órdenes de pago</a></li>
+                </ul>
+            </li>
+
+            <!-- Movimientos -->
+            <li class="dropdown {{ setActiveExcept(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario', 'admin.contabilidad.ordenes-dashboard', 'admin.contabilidad.ordenes-cobro', 'admin.contabilidad.ordenes-pago', 'admin.contabilidad.index'], 'admin.contabilidad.*') }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>Movimientos</span></a>
+                <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.contabilidad.transactions']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.transactions') }}">Todos los movimientos</a></li>
                     <li class="{{ setActive(['admin.contabilidad.incomes']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.incomes') }}">Ingresos</a></li>
                     <li class="{{ setActive(['admin.contabilidad.expenses']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.expenses') }}">Egresos</a></li>

@@ -275,6 +275,10 @@ Route::put('/contabilidad/{id}', [ContabilidadController::class, 'actualizar'])-
 Route::delete('/contabilidad/{id}', [ContabilidadController::class, 'eliminar'])->name('contabilidad.eliminar');
 Route::get('/contabilidad/transactions/search', [ContabilidadController::class, 'search'])->name('admin.contabilidad.search');
 
+Route::get ('/contabilidad/ordenes/dashboard' , [ContabilidadController::class, 'ordenesDashboard']) ->name('admin.contabilidad.ordenes-dashboard');
+Route::get ('/contabilidad/ordenes/cobro' , [ContabilidadController::class, 'ordenesCobro']) ->name('admin.contabilidad.ordenes-cobro');
+Route::get ('/contabilidad/ordenes/pago' , [ContabilidadController::class, 'ordenesPago']) ->name('admin.contabilidad.ordenes-pago');
+
 
 /** Usuarios Contabilidad Routes */
 Route::get('/usuarios/contabilidad', [UsersController::class, 'users'])->name('admin.contabilidad.users');

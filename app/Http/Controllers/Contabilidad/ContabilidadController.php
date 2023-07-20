@@ -222,4 +222,25 @@ class ContabilidadController extends Controller
     {
         return view('admin.contabilidad.agregar-usuario');
     }
+
+    // Todas las ordenes - Dashboard
+
+    public function ordenesDashboard()
+    {
+        return view('admin.contabilidad.ordenes-dashboard');
+    }
+
+    // Ordenes de cobro
+
+    public function ordenesCobro() 
+    {
+        return view('admin.contabilidad.ordenes-cobro');
+    }
+
+    // Ordenes de cobro
+
+    public function ordenesPago() 
+    {
+        return view('admin.contabilidad.ordenes-pago');
+    }
 }

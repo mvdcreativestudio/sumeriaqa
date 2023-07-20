@@ -61,11 +61,11 @@
         </div>
         <div class="mt-4">
             <div class="d-flex justify-content-between">
-                <div>
+                {{-- <div>
                     <i class="fas fa-check-circle text-success ml-1 tooltipped" title="En fecha" style="font-size: 1.5em;"></i><a href=""> En Fecha</a>
                     <i class="fas fa-exclamation-circle text-warning ml-1 tooltipped" title="Por vencer" style="font-size: 1.5em;"></i><a href=""> Por Vencer</a>
                     <i class="fas fa-times-circle text-danger ml-1 tooltipped" title="Vencido" style="font-size: 1.5em;"></i><a href=""> Vencida</a> 
-                </div>
+                </div> --}}
                 <div class="mb-3">
                     <label for="selectSort"></label>
                     <div class="btn-group" role="group" aria-label="Ordenar por">
@@ -118,17 +118,17 @@
                                 Descripción
                             </th>
                             <th class="sortable" data-column="fecha">
-                                Creado
+                                Fecha
                             </th>
-                            <th class="sortable" data-column="fecha_vencimiento">
+                            {{-- <th class="sortable" data-column="fecha_vencimiento">
                                 Vencimiento
-                            </th>
+                            </th> --}}
                             <th class="sortable" data-column="monto">
                                 Monto
                             </th>
-                            <th class="sortable" data-column="estado">
+                            {{-- <th class="sortable" data-column="estado">
                                 Estado
-                            </th>
+                            </th> --}}
                             <th class="text-right">Acciones</th>
                         </tr>
                     </thead>
@@ -147,7 +147,7 @@
                             </td>
                             <td>{{ $movimiento->concepto }}</td>
                             <td>{{ \Carbon\Carbon::parse($movimiento->fecha)->format('d/m/Y') }}</td>
-                            <td class="font-weight-bold">
+                            {{-- <td class="font-weight-bold">
                                 <span>
                                     {{ \Carbon\Carbon::parse($movimiento->fecha_vencimiento)->format('d/m/Y') }}
                                     @if ($movimiento->estado === 'Impago')
@@ -160,9 +160,9 @@
                                     @endif
                                     @endif
                                 </span>
-                            </td>
+                            </td> --}}
                             <td>${{ number_format($movimiento->monto, 0, ',', '.') }}</td>
-                            <td class="font-weight-bold">
+                            {{-- <td class="font-weight-bold">
                                 @if ($movimiento->estado === 'Pago')
                                 <span class="text-success">{{ $movimiento->estado }}</span>
                                 @elseif ($movimiento->estado === 'Impago')
@@ -170,7 +170,7 @@
                                 @else
                                 {{ $movimiento->estado }}
                                 @endif
-                            </td>
+                            </td> --}}
                             <td class="text-right">
                                 <a href="{{ route('contabilidad.ver', $movimiento->id) }}" class="btn btn-primary btn-action btn-detail" data-toggle="tooltip" title="Ver">
                                     <i class="fas fa-eye"></i>
@@ -201,9 +201,8 @@
     
 @endsection
 
-@push('scripts')
 
-    <script src="{{asset('backend/assets/modules/jquery.min.js')}}"></script>
+@push('scripts')
   
     <script>
         // Boton formulario agregar
