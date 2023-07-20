@@ -162,6 +162,7 @@
             <!-- Header: Administrador de Pagos -->
             <li class="menu-header">Administrador de Pagos</li>
 
+            
             <!-- Contabilidad -->
             <li class="dropdown {{ setActiveExcept(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario'], 'admin.contabilidad.*') }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>contabilidad</span></a>
