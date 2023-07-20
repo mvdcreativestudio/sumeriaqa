@@ -14,7 +14,7 @@ class UsersController extends Controller
         $clienteCount = $this->getClienteCount();
         $proveedoresCount = $this->getProveedoresCount();
 
-        return view('admin.movimientos.users', compact('usuarios', 'clienteCount', 'proveedoresCount'));
+        return view('admin.contabilidad.users', compact('usuarios', 'clienteCount', 'proveedoresCount'));
 
     }
 
@@ -60,7 +60,7 @@ class UsersController extends Controller
         $usuario->status = 'activo';
         $usuario->save();
     
-        return redirect()->route('admin.movimientos.users')->with('success', 'Usuario creado exitosamente');
+        return redirect()->route('admin.contabilidad.users')->with('success', 'Usuario creado exitosamente');
     }
 
         // VER USUARIO
@@ -68,7 +68,7 @@ class UsersController extends Controller
         {
             $usuario = Usuario::findOrFail($id);
             
-            return view('admin.movimientos.usuario', compact('usuario'));
+            return view('admin.contabilidad.usuario', compact('usuario'));
         }
     
     
