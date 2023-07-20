@@ -43,7 +43,7 @@ class UsersController extends Controller
             'departamento' => 'nullable',
             'direccion' => 'required',
             'telefono' => 'required',
-            'email' => 'required|email|unique:cashflow_usuarios,email',
+            'email' => 'required|email|unique:contabilidad_usuarios,email',
         ]);
     
         $usuario = new Usuario();
