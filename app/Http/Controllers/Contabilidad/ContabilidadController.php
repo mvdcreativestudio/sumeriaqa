@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\contabilidad;
+namespace App\Http\Controllers\Contabilidad;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;

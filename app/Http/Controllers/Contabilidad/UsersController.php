@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Movimientos;
+namespace App\Http\Controllers\Contabilidad;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Movimientos\Usuario;
+use App\Models\Contabilidad\Usuario;
 
 class UsersController extends Controller
 {

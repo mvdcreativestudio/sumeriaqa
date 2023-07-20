@@ -162,10 +162,10 @@
             <!-- Header: Administrador de Pagos -->
             <li class="menu-header">Administrador de Pagos</li>
 
-            
+
             <!-- Contabilidad -->
             <li class="dropdown {{ setActiveExcept(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario'], 'admin.contabilidad.*') }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>contabilidad</span></a>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>Contabilidad</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.contabilidad.index']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.index') }}">Dashboard</a></li>
                     <li class="{{ setActive(['admin.contabilidad.transactions']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.transactions') }}">Todos los movimientos</a></li>
