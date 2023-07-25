@@ -5,7 +5,7 @@
 <section class="section">
     <div>
         <div class="section-header d-flex justify-content-between align-items-center">
-            <h1 class="mr-auto">Todos los contabilidad</h1>
+            <h1 class="mr-auto">Todos los movimientos</h1>
             <div class="card-header-action text-right">
                 <a href="{{ URL::previous() }}" class="btn btn-primary">Atrás</a>
             </div>

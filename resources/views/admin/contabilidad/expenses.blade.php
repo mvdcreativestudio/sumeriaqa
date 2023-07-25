@@ -4,7 +4,7 @@
 
 <section class="section">
     <div class="section-header d-flex justify-content-between align-items-center">
-        <h1 class="mr-auto">Egresos</h1>
+        <h1 class="mr-auto">Pagos</h1>
         <div class="card-header-action text-right">
             <a href="{{ URL::previous() }}" class="btn btn-primary">Atrás</a>
         </div>
@@ -52,7 +52,7 @@
                         <thead class="thead-dark">
                             <tr class="tr-light text-center">
                                 <th class="sortable" data-column="id">
-                                    ID
+                                    Id
                                 </th>
                                 <th class="sortable" data-column="nombre_cliente">
                                     Nombre del Cliente
@@ -60,7 +60,7 @@
                                 <th class="sortable" data-column="tipo">
                                     Tipo
                                 </th>
-                                <th class="sortable" data-column="concepto">
+                                <th>
                                     Descripción
                                 </th>
                                 <th class="sortable" data-column="fecha">
@@ -80,45 +80,33 @@
                         </thead>
                         <tbody>
                             @foreach ($contabilidad as $movimiento)
-                            <tr class="text-center">
-                                <td>{{ $movimiento->id }}</td>
-                                <td>{{ $movimiento->nombre_cliente }}</td>
-                                <td>
-                                    @if ($movimiento->tipo === 'Cobro')
-                                    <span class="text-success font-weight-bold">Ingreso</span>
-                                    @else
-                                    <span class="text-danger font-weight-bold">Egreso</span>
-                                    @endif
-                                </td>
-                                <td>{{ $movimiento->concepto }}</td>
-                                <td>{{ \Carbon\Carbon::parse($movimiento->fecha)->format('d/m/Y') }}</td>
-                                {{-- <td>{{ \Carbon\Carbon::parse($movimiento->fecha_vencimiento)->format('d/m/Y') }}</td> --}}
-                                <td>${{ number_format($movimiento->monto, 0, ',', '.') }}</td>
-                                {{-- <td class="font-weight-bold">
-                                    @if ($movimiento->estado === 'Pago')
-                                    <span class="text-success">{{ $movimiento->estado }}</span>
-                                    @elseif ($movimiento->estado === 'Impago')
-                                    <span class="text-danger">{{ $movimiento->estado }}</span>
-                                    @else
-                                    {{ $movimiento->estado }}
-                                    @endif
-                                </td> --}}
-                                <td class="text-right">
-                                    <a href="{{ route('contabilidad.ver', $movimiento->id) }}" class="btn btn-primary btn-action btn-detail" data-toggle="tooltip" title="Ver">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                    <a href="{{ route('contabilidad.editar', $movimiento->id) }}" class="btn btn-primary btn-action btn-edit" data-id="{{ $movimiento->id }}" title="Editar">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </a>
-                                    <form action="{{ route('contabilidad.eliminar', $movimiento->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger btn-action btn-delete" data-toggle="tooltip" title="Eliminar" onclick="return confirm('¿Estás seguro de que quieres eliminar este movimiento?')">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
+                                @if ($movimiento->tipo === 'Pago' & $movimiento->estado === 'Pago')
+                                    <tr class="text-center">
+                                        <td>{{ $movimiento->id }}</td>
+                                        <td>{{ $movimiento->nombre_cliente }}</td>
+                                        <td>
+                                            <span class="text-danger font-weight-bold">Egreso</span>
+                                        </td>
+                                        <td>{{ $movimiento->concepto }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($movimiento->fecha)->format('d/m/Y') }}</td>
+                                        <td>${{ number_format($movimiento->monto, 0, ',', '.') }}</td>
+                                        <td class="text-right">
+                                            <a href="{{ route('contabilidad.ver', $movimiento->id) }}" class="btn btn-primary btn-action btn-detail" data-toggle="tooltip" title="Ver">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="{{ route('contabilidad.editar', $movimiento->id) }}" class="btn btn-primary btn-action btn-edit" data-id="{{ $movimiento->id }}" title="Editar">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <form action="{{ route('contabilidad.eliminar', $movimiento->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger btn-action btn-delete" data-toggle="tooltip" title="Eliminar" onclick="return confirm('¿Estás seguro de que quieres eliminar este movimiento?')">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

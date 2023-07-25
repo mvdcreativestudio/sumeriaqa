@@ -22,6 +22,7 @@ class CreateContabilidadTable extends Migration
             $table->integer('monto');
             $table->date('fecha_vencimiento');
             $table->enum('estado', ['Pago', 'Impago'])->default('Impago');
+            $table->date('fecha_de_pago');
             $table->string('estado_vencimiento')->nullable();
             $table->timestamps();
         });

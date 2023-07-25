@@ -18,10 +18,18 @@ class Kernel extends ConsoleKernel
     /**
      * Register the commands for the application.
      */
-    protected function commands(): void
+    protected function commands()
     {
         $this->load(__DIR__.'/Commands');
-
-        require base_path('routes/console.php');
+        
+        // Agregar la tarea programada "orden:actualizar-estado" cada 30 segundos
+        $this->app->booted(function () {
+            $schedule = $this->app->make(Schedule::class);
+            $schedule->command('orden:actualizar-estado')->daily();
+        });
+        
+        $this->app->booted(function () {
+            require base_path('routes/console.php');
+        });
     }
 }

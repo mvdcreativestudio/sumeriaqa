@@ -173,6 +173,7 @@
                     <li class="{{ setActive(['admin.contabilidad.ordenes-dashboard']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-dashboard') }}">Todas las órdenes</a></li>
                     <li class="{{ setActive(['admin.contabilidad.ordenes-cobro']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-cobro') }}">Órdenes de cobro</a></li>
                     <li class="{{ setActive(['admin.contabilidad.ordenes-pago']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-pago') }}">Órdenes de pago</a></li>
+                    <li class="{{setActive(['admin.contabilidad.crear-orden']) }}"><a href="{{ route('admin.contabilidad.crear-orden') }}" class="nav-link">Crear Orden</a></li>
                 </ul>
             </li>
 
@@ -181,8 +182,8 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-arrows-spin"></i><span>Movimientos</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setActive(['admin.contabilidad.transactions']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.transactions') }}">Todos los movimientos</a></li>
-                    <li class="{{ setActive(['admin.contabilidad.incomes']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.incomes') }}">Ingresos</a></li>
-                    <li class="{{ setActive(['admin.contabilidad.expenses']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.expenses') }}">Egresos</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.incomes']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.incomes') }}">Cobros</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.expenses']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.expenses') }}">Pagos</a></li>
                 </ul>
             </li>
 

@@ -274,10 +274,13 @@ Route::get('/contabilidad/{id}/editar', [ContabilidadController::class, 'editar'
 Route::put('/contabilidad/{id}', [ContabilidadController::class, 'actualizar'])->name('contabilidad.actualizar');
 Route::delete('/contabilidad/{id}', [ContabilidadController::class, 'eliminar'])->name('contabilidad.eliminar');
 Route::get('/contabilidad/transactions/search', [ContabilidadController::class, 'search'])->name('admin.contabilidad.search');
+Route::put ('/contabilidad/{id}/marcar-como-pago', [ContabilidadController::class, 'marcarComoPago'])->name('contabilidad.marcar-como-pago');
+
 
 Route::get ('/contabilidad/ordenes/dashboard' , [ContabilidadController::class, 'ordenesDashboard']) ->name('admin.contabilidad.ordenes-dashboard');
 Route::get ('/contabilidad/ordenes/cobro' , [ContabilidadController::class, 'ordenesCobro']) ->name('admin.contabilidad.ordenes-cobro');
 Route::get ('/contabilidad/ordenes/pago' , [ContabilidadController::class, 'ordenesPago']) ->name('admin.contabilidad.ordenes-pago');
+Route::match(['get', 'post'], '/contabilidad/ordenes/crear-orden', [ContabilidadController::class, 'crearOrden'])->name('admin.contabilidad.crear-orden');
 
 
 /** Usuarios Contabilidad Routes */
