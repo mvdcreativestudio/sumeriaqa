@@ -3035,3 +3035,24 @@ table.dataTable.table-striped>tbody>tr.odd>* {
   border: none !important;
   color: #393e46!important;
 }
+
+.card-circle-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+.bg-success-circle {
+    background-color: #28a745;
+}
+.bg-warning-circle {
+    background-color: #ffc107;
+}
+.bg-danger-circle {
+    background-color: #dc3546;
+}
+
+.primaryBackground {
+  background-color: #e6fd55!important;
+}

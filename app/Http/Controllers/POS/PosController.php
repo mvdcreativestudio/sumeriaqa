@@ -18,7 +18,8 @@ class PosController extends Controller
 {
     public function caja()
     {
-        $products = Product::paginate(8);
+        $products = Product::get();
+
         $productosOrden = Session::get('productosOrden', []);
         $total = $this->totalOrden($productosOrden);
 
@@ -90,6 +91,7 @@ class PosController extends Controller
 
         return Redirect::back();
     }
+    
 
     public function finalizarCompra(Request $request)
 {

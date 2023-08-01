@@ -7,18 +7,15 @@
         <div class="section-header d-flex justify-content-between align-items-center">
             <h1 class="mr-auto">Todas las órdenes</h1>
             <div class="card-header-action text-right">
-                <a href="{{ URL::previous() }}" class="btn btn-primary">Atrás</a>
+                <a href="{{ route('admin.contabilidad.crear-orden') }}" class="btn btn-primary">Crear factura</a>
+                {{-- <a href="{{ URL::previous() }}" class="btn btn-primary">Atrás</a> --}}
             </div>
         </div>
 
         <div class="mt-4">
             <div class="d-flex justify-content-between">
-                {{-- <div>
-                    <i class="fas fa-check-circle text-success ml-1 tooltipped" title="En fecha" style="font-size: 1.5em;"></i><a href=""> En Fecha</a>
-                    <i class="fas fa-exclamation-circle text-warning ml-1 tooltipped" title="Por vencer" style="font-size: 1.5em;"></i><a href=""> Por Vencer</a>
-                    <i class="fas fa-times-circle text-danger ml-1 tooltipped" title="Vencido" style="font-size: 1.5em;"></i><a href=""> Vencida</a> 
-                </div> --}}
                 <div class="mb-3">
+                    <a href="">Ordenar por:</a>
                     <label for="selectSort"></label>
                     <div class="btn-group" role="group" aria-label="Ordenar por">
                         <button type="button" class="btn btn-secondary sort-button" data-column="id" data-order="asc">
@@ -30,17 +27,14 @@
                         <button type="button" class="btn btn-secondary sort-button" data-column="tipo" data-order="asc">
                             Tipo
                         </button>
-                        <button type="button" class="btn btn-secondary sort-button" data-column="fecha" data-order="asc">
-                            Creado
-                        </button>
                         <button type="button" class="btn btn-secondary sort-button" data-column="fecha_vencimiento" data-order="asc">
                             Vencimiento
                         </button>
-                        <button type="button" class="btn btn-secondary sort-button" data-column="monto" data-order="asc">
-                            Monto
-                        </button>
                         <button type="button" class="btn btn-secondary sort-button" data-column="estado" data-order="asc">
                             Estado
+                        </button>
+                        <button type="button" class="btn btn-secondary sort-button" data-column="monto" data-order="asc">
+                            Monto
                         </button>
                     </div>
                 </div>
@@ -49,7 +43,7 @@
 
 
             <div class="mb-3">
-                <input type="text" id="searchInput" class="form-control" placeholder="Buscar movimiento...">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar orden...">
             </div>
 
                 
@@ -126,20 +120,20 @@
                                     <span class="text-danger">{{ $movimiento->estado_vencimiento }}</span>
                                     @endif
                                 </td>
-                                <td>${{ number_format($movimiento->monto, 0, ',', '.') }}</td>
+                                <td>{{$settings->currency_icon}}{{ number_format($movimiento->monto, 0, ',', '.') }}</td>
 
                                 <td class="text-right">
                                     <form action="{{ route('contabilidad.marcar-como-pago', $movimiento->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('PUT')
-                                        <button type="submit" class="btn btn-success btn-action btn-marcar-pago" data-toggle="tooltip" title="Marcar como pago" onclick="return confirm('¿Estás seguro de que quieres marcar este movimiento como pago?')">
+                                        <button type="submit" class="btn btn-success btn-action btn-marcar-pago" data-toggle="tooltip" title="Marcar como pago" onclick="return confirm('¿Estás seguro de que quieres marcar esta factura como pago?')">
                                             <i class="fas fa-check"></i>
                                         </button>
                                     </form>
                                     <form action="{{ route('contabilidad.eliminar', $movimiento->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-action btn-delete" data-toggle="tooltip" title="Eliminar" onclick="return confirm('¿Estás seguro de que quieres eliminar este movimiento?')">
+                                        <button class="btn btn-danger btn-action btn-delete" data-toggle="tooltip" title="Eliminar" onclick="return confirm('¿Estás seguro de que quieres eliminar esta factura?')">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>

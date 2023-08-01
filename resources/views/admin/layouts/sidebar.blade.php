@@ -144,6 +144,23 @@
             <li><a class="nav-link" href="{{ route('admin.settings.index') }}"><i class="fas fa-wrench"></i><span>Configuración</span></a></li>
             @endif
 
+            @if($modulos['recursos-humanos']->enabled)
+            <!-- Header: Recursos Humanos -->
+            <li class="menu-header">Recursos Humanos</li>
+            <!-- RECURSOS HUMANOS-->
+            <li class="dropdown {{ setActive(['admin.recursos-humanos.*']) }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user-group"></i><span>Recursos Humanos</span></a>
+                <ul class="dropdown-menu"> 
+                    <li class=" {{ setActive(['admin.recursos-humanos.dashboard']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.dashboard') }}">Dashboard</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.gestion']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.gestion') }}">Gestión de personal</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.salarios']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.salarios') }}">Salarios</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.horarios']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.horarios') }}">Horarios</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.vacaciones']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.vacaciones') }}">Vacaciones</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.faltas']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.faltas') }}">Faltas</a></li>
+                </ul>
+            </li>
+            @endif
+
             @if($modulos['pos']->enabled)
             <!-- Header: Punto de venta -->
             <li class="menu-header">Punto de venta</li>
@@ -168,12 +185,12 @@
 
             <!-- Ordenes -->
             <li class="dropdown {{ setActiveExcept(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario', 'admin.contabilidad.index', 'admin.contabilidad.transactions', 'admin.contabilidad.incomes', 'admin.contabilidad.expenses'], 'admin.contabilidad.*') }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-invoice-dollar"></i><span>Órdenes</span></a>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-invoice-dollar"></i><span>Facturas</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ setActive(['admin.contabilidad.ordenes-dashboard']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-dashboard') }}">Todas las órdenes</a></li>
-                    <li class="{{ setActive(['admin.contabilidad.ordenes-cobro']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-cobro') }}">Órdenes de cobro</a></li>
-                    <li class="{{ setActive(['admin.contabilidad.ordenes-pago']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-pago') }}">Órdenes de pago</a></li>
-                    <li class="{{setActive(['admin.contabilidad.crear-orden']) }}"><a href="{{ route('admin.contabilidad.crear-orden') }}" class="nav-link">Crear Orden</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.ordenes-dashboard']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-dashboard') }}">Todas las facturas</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.ordenes-cobro']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-cobro') }}">Facturas a cobrar</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.ordenes-pago']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.ordenes-pago') }}">Facturas a pagar</a></li>
+                    <li class="{{setActive(['admin.contabilidad.crear-orden']) }}"><a href="{{ route('admin.contabilidad.crear-orden') }}" class="nav-link">Crear factura</a></li>
                 </ul>
             </li>
 
@@ -189,10 +206,10 @@
 
             <!-- Usuarios de contabilidad -->
             <li class="dropdown {{ setActive(['admin.contabilidad.users', 'admin.contabilidad.agregar-usuario']) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i><span>Usuarios</span></a>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i><span>Proveedores</span></a>
                 <ul class="dropdown-menu"> 
-                    <li class="{{ setActive(['admin.contabilidad.users']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.users') }}">Todos los usuarios</a></li>
-                    <li class="{{ setActive(['admin.contabilidad.agregar-usuario']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.agregar-usuario') }}">Agregar usuario</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.users']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.users') }}">Todos los proveedores</a></li>
+                    <li class="{{ setActive(['admin.contabilidad.agregar-usuario']) }}"><a class="nav-link" href="{{ route('admin.contabilidad.agregar-usuario') }}">Agregar proveedor</a></li>
                 </ul>
             </li>
             @endif

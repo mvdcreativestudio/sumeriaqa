@@ -158,6 +158,7 @@ class ComposerStaticIniteda72b77269676ab30c310f2c471c6c7
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Breeze\\' => 15,
+            'LaravelDaily\\LaravelCharts\\' => 27,
         ),
         'I' => 
         array (
@@ -519,6 +520,10 @@ class ComposerStaticIniteda72b77269676ab30c310f2c471c6c7
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
+        'LaravelDaily\\LaravelCharts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laraveldaily/laravel-charts/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -652,7 +657,9 @@ class ComposerStaticIniteda72b77269676ab30c310f2c471c6c7
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\ActualizarEstadoOrdenes' => __DIR__ . '/../..' . '/app/Console/Commands/ActualizarEstadoOrdenes.php',
         'App\\Console\\Commands\\ProcessProductStock' => __DIR__ . '/../..' . '/app/Console/Commands/ProcessProductStock.php',
+        'App\\Console\\Commands\\StartSchedule' => __DIR__ . '/../..' . '/app/Console/Commands/StartSchedule.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\DataTables\\AdminListDataTable' => __DIR__ . '/../..' . '/app/DataTables/AdminListDataTable.php',
         'App\\DataTables\\AdminReviewDataTable' => __DIR__ . '/../..' . '/app/DataTables/AdminReviewDataTable.php',
@@ -762,6 +769,8 @@ class ComposerStaticIniteda72b77269676ab30c310f2c471c6c7
         'App\\Http\\Controllers\\Backend\\VendorProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/VendorProfileController.php',
         'App\\Http\\Controllers\\Backend\\VendorRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/VendorRequestController.php',
         'App\\Http\\Controllers\\Backend\\VendorShopProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/VendorShopProfileController.php',
+        'App\\Http\\Controllers\\Contabilidad\\ContabilidadController' => __DIR__ . '/../..' . '/app/Http/Controllers/Contabilidad/ContabilidadController.php',
+        'App\\Http\\Controllers\\Contabilidad\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Contabilidad/UsersController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Frontend\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/BlogController.php',
         'App\\Http\\Controllers\\Frontend\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/CartController.php',
@@ -781,8 +790,6 @@ class ComposerStaticIniteda72b77269676ab30c310f2c471c6c7
         'App\\Http\\Controllers\\Frontend\\UserVendorReqeustController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/UserVendorReqeustController.php',
         'App\\Http\\Controllers\\Frontend\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/WishlistController.php',
         'App\\Http\\Controllers\\ModuloController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModuloController.php',
-        'App\\Http\\Controllers\\POS\\CuponController' => __DIR__ . '/../..' . '/app/Http/Controllers/POS/CuponController.php',
-        'App\\Http\\Controllers\\POS\\PosController' => __DIR__ . '/../..' . '/app/Http/Controllers/POS/PosController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\StockController' => __DIR__ . '/../..' . '/app/Http/Controllers/StockController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -3500,6 +3507,8 @@ class ComposerStaticIniteda72b77269676ab30c310f2c471c6c7
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'LaravelDaily\\LaravelCharts\\Classes\\LaravelChart' => __DIR__ . '/..' . '/laraveldaily/laravel-charts/src/Classes/LaravelChart.php',
+        'LaravelDaily\\LaravelCharts\\LaravelChartsServiceProvider' => __DIR__ . '/..' . '/laraveldaily/laravel-charts/src/LaravelChartsServiceProvider.php',
         'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
         'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
         'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',

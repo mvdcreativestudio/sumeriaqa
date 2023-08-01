@@ -15,8 +15,9 @@ class CreateContabilidadTable extends Migration
     {
         Schema::create('contabilidad', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('usuario_id');
+            $table->integer('usuario_id')->nullable();
             $table->string('nombre_cliente');
+            $table->string('empresa')->default('-');
             $table->enum('tipo', ['Cobro', 'Pago'])->default('Cobro');
             $table->string('concepto')->nullable();
             $table->integer('monto');

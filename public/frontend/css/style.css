@@ -3103,12 +3103,13 @@ PPRODUCT PAGE START
 }
 
 .form-check input {
-  border-radius: 0 !important;
+  border-radius: 100px !important;
 }
 
 .form-check-input:checked {
   background-color: #08C;
   border-color: #08C;
+  border-radius: 10px!important;
 }
 
 .form-check label {
@@ -4637,7 +4638,7 @@ CHECKOUT PAGE START
   width: 15px;
   padding: 0;
   border-color: #08c;
-  border-radius: 3px !important;
+  border-radius: 100px !important;
 }
 
 .checkout_accordian .accordion-button::after {
@@ -4787,6 +4788,10 @@ CHECKOUT PAGE START
 
 .wsus__checkout_single_address .form-check-input {
   border-radius: 50% !important;
+}
+
+.form-check-input {
+  border-radius: 100px!important;
 }
 
 
@@ -9653,4 +9658,38 @@ background: #fff;
 }
 .add_cart {
   border: 0px !important;
+}
+
+
+
+.primaryBackground {
+  background-color: #1e1f21!important;
+  height: 100vh!important;
+  padding-top: 0px!important;
+  margin-top: 0px!important;
+  overflow-x: hidden;
+}
+
+.btn-primary, .btn-primary.disabled {
+  background-color: #393e46;
+  border-color: #393e46; }
+  .btn-primary:focus, .btn-primary.disabled:focus {
+    background-color: #393e46 !important; }
+    .btn-primary:focus:active, .btn-primary.disabled:focus:active {
+      background-color: #393e46 !important; }
+  .btn-primary:active, .btn-primary:hover, .btn-primary.disabled:active, .btn-primary.disabled:hover {
+    background-color: #393e46 !important; }
+
+
+.cardLogin {
+  background-color: rgba(13, 13, 13, 0.2);
+  padding: 15px;
+  border-radius: 30px;
+  width: 70vh!important;
+  color: white!important;
+}
+
+.cardLoginHeader {
+  background-color: transparent!important;
+  color: white!important;
 }

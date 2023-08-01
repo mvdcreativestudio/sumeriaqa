@@ -51,6 +51,7 @@ use App\Http\Controllers\Backend\BulkProductController;
 use App\Http\Controllers\Backend\LoyaltyProgramController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\ModuloController;
+use App\Http\Controllers\RecursosHumanos\RecursosHumanosController;
 
 
 
@@ -265,6 +266,9 @@ Route::put('cod-setting/{id}', [CodSettingController::class, 'update'])->name('c
 
 /** Contabilidad Routes */
 Route::get('/contabilidad', [ContabilidadController::class, 'index'])->name('admin.contabilidad.index');
+Route::get('/contabilidad/chart-data', [ContabilidadController::class, 'getChartData'])->name('admin.contabilidad.chart-data');
+Route::get('/contabilidad/chart-data-range', [ContabilidadController::class, 'getChartDataByDateRange'])->name('contabilidad.chartDataRange');
+Route::get('/chart-data/{tipo}', [ContabilidadController::class, 'getChartData']);
 Route::get('/contabilidad/transactions', [ContabilidadController::class, 'transactions'])->name('admin.contabilidad.transactions');
 Route::get('/contabilidad/incomes', [ContabilidadController::class, 'incomes'])->name('admin.contabilidad.incomes');
 Route::get('/contabilidad/expenses', [ContabilidadController::class, 'expenses'])->name('admin.contabilidad.expenses');
@@ -301,6 +305,16 @@ Route::get('/pos/caja', [PosController::class, 'caja'])->name('admin.pos.caja');
     Route::get('/admin/pos/confirmacion', function () {return view('admin.pos.confirmacion');})->name('admin.pos.confirmacion');
     Route::post('/admin/pos/actualizar-cantidad', [PosController::class, 'actualizarCantidad'])->name('admin.pos.actualizar-cantidad');
 Route::get('/pos/dashboard', [PosController::class, 'dashboard'])->name('admin.pos.dashboard');
+
+
+/** RECURSOS HUMANOS */
+
+Route::get('/recursos-humanos/dashboard', [RecursosHumanosController::class, 'dashboard'])->name('admin.recursos-humanos.dashboard');
+Route::get('/recursos-humanos/gestion', [RecursosHumanosController::class, 'gestion'])->name('admin.recursos-humanos.gestion');
+Route::get('/recursos-humanos/salarios', [RecursosHumanosController::class, 'salarios'])->name('admin.recursos-humanos.salarios');
+Route::get('/recursos-humanos/horarios', [RecursosHumanosController::class, 'horarios'])->name('admin.recursos-humanos.horarios');
+Route::get('/recursos-humanos/vacaciones', [RecursosHumanosController::class, 'vacaciones'])->name('admin.recursos-humanos.vacaciones');
+Route::get('/recursos-humanos/faltas', [RecursosHumanosController::class, 'faltas'])->name('admin.recursos-humanos.faltas');
 
 /** Loyalty Program */
 Route::get('admin/loyalty-program', [LoyaltyProgramController::class, 'loyalty'])->name('admin.loyalty-program.loyalty');

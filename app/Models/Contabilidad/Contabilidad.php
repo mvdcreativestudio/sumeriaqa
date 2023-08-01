@@ -9,6 +9,7 @@ class Contabilidad extends Model
 {
     protected $fillable = ['nombre_cliente', 'concepto', 'fecha_vencimiento', 'estado', 'monto', 'estado_vencimiento'];
     protected $table = 'contabilidad';
+    protected $dates = ['fecha_de_pago'];
 
     public function usuario()
     {

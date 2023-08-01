@@ -41,15 +41,8 @@
                         </ul>
                         <div class="tab-content mt-3">
                             <div class="tab-pane fade show active" id="productos">
-                                <div class="input-group mb-3">
-                                    <form action="{{ route('admin.pos.searchProduct') }}" method="GET" class="w-100">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Buscar productos" name="search_term" id="search-products-input" value="{{ old('search_term') }}">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="submit" id="search-products-button">Buscar</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                <div class="mb-3">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar producto...">
                                 </div>
                                 
                                 <div id="list-view-container">
@@ -77,7 +70,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {{ $products->links() }}
+                                    {{-- {{ $products->links() }} --}}
                                 </div>
                                 <div id="grid-view-container" style="display: none;">
                                     <div class="row">
@@ -99,7 +92,7 @@
                                         @endforeach
                                     </div>
                                     <div class="mt-4">
-                                        {{ $products->links() }}
+                                        {{-- {{ $products->links() }} --}}
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +165,7 @@
                             <div class="form-group" id="cupon-descuento-container" style="display: none;">
                                 <label for="cupon-descuento">Cupón de Descuento</label>
                                 <input type="text" class="form-control" id="cupon-descuento" name="cupon" placeholder="Ingrese el cupón">
-                                <button class="btn btn-primary col-4" id="btn-agregar-cupon" onclick="event.preventDefault(); document.getElementById('cupon-form').submit();">Agregar Cupón</button>
+                                <button class="btn btn-primary col-4 mt-3" id="btn-agregar-cupon" onclick="event.preventDefault(); document.getElementById('cupon-form').submit();">Agregar Cupón</button>
                             </div>
                     
                             <div class="form-group" id="descuento-porcentaje-container" style="display: none;">
@@ -231,6 +224,29 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Capturar el evento de cambio en el campo de búsqueda
+        $('#searchInput').on('keyup', function() {
+            var searchText = $(this).val().toLowerCase();
+            searchText = normalizeText(searchText); // Normalizar el texto de búsqueda
+
+            // Filtrar las filas de la tabla según el texto de búsqueda
+            $("#productos-table tbody tr").filter(function() {
+                var rowText = $(this).text().toLowerCase();
+                rowText = normalizeText(rowText); // Normalizar el texto de la fila
+                $(this).toggle(rowText.indexOf(searchText) > -1);
+            });
+        });
+
+        // Función para normalizar un texto removiendo los tildes
+        function normalizeText(text) {
+            return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+    });
+</script>
+
 
 <script>
 $(document).ready(function() {

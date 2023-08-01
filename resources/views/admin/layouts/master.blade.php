@@ -73,7 +73,7 @@
   <script src="{{asset('backend/assets/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
   <script src="{{asset('backend/assets/modules/moment.min.js')}}"></script>
   <script src="{{asset('backend/assets/js/stisla.js')}}"></script>
-  <script src="{{asset('backend/assets/js/page/movimientos.js')}}"></script>
+  <script src="{{asset('backend/assets/js/page/contabilidad.js')}}"></script>
 
 
 
@@ -93,12 +93,8 @@
   <script src="{{asset('backend/assets/js/bootstrap-iconpicker.bundle.min.js')}}"></script>
   <script src="{{asset('backend/assets/modules/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
   <script src="{{asset('backend/assets/modules/select2/dist/js/select2.full.min.js')}}"></script>
-  <script src="{{asset('backend/assets/js/page/charts.js')}}"></script>
 
 
-
-  <!-- Page Specific JS File -->
-  {{-- <script src="{{asset('backend/assets/js/page/index-0.js')}}"></script> --}}
 
   <!-- Template JS File -->
   <script src="{{asset('backend/assets/js/scripts.js')}}"></script>
@@ -174,6 +170,7 @@
   
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
   @stack('scripts')
   
 </body>

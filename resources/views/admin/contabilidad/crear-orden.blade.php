@@ -39,6 +39,10 @@
                     <label for="apellido" class="form-label">Apellido:</label>
                     <input type="text" class="form-control" name="apellido" id="apellidoInvitado">
                 </div> 
+                <div class="mb-3 campos-invitado" style="display: none;">
+                    <label for="empresa" class="form-label">Empresa:</label>
+                    <input type="text" class="form-control" name="empresa" id="Invitado">
+                </div> 
                 <div class="mb-3">
                     <label for="concepto" class="form-label">Concepto de la orden:</label>
                     <input type="text" class="form-control" name="concepto" required>

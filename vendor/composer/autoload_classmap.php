@@ -6,7 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\ActualizarEstadoOrdenes' => $baseDir . '/app/Console/Commands/ActualizarEstadoOrdenes.php',
     'App\\Console\\Commands\\ProcessProductStock' => $baseDir . '/app/Console/Commands/ProcessProductStock.php',
+    'App\\Console\\Commands\\StartSchedule' => $baseDir . '/app/Console/Commands/StartSchedule.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\DataTables\\AdminListDataTable' => $baseDir . '/app/DataTables/AdminListDataTable.php',
     'App\\DataTables\\AdminReviewDataTable' => $baseDir . '/app/DataTables/AdminReviewDataTable.php',
@@ -116,6 +118,8 @@ return array(
     'App\\Http\\Controllers\\Backend\\VendorProfileController' => $baseDir . '/app/Http/Controllers/Backend/VendorProfileController.php',
     'App\\Http\\Controllers\\Backend\\VendorRequestController' => $baseDir . '/app/Http/Controllers/Backend/VendorRequestController.php',
     'App\\Http\\Controllers\\Backend\\VendorShopProfileController' => $baseDir . '/app/Http/Controllers/Backend/VendorShopProfileController.php',
+    'App\\Http\\Controllers\\Contabilidad\\ContabilidadController' => $baseDir . '/app/Http/Controllers/Contabilidad/ContabilidadController.php',
+    'App\\Http\\Controllers\\Contabilidad\\UsersController' => $baseDir . '/app/Http/Controllers/Contabilidad/UsersController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Frontend\\BlogController' => $baseDir . '/app/Http/Controllers/Frontend/BlogController.php',
     'App\\Http\\Controllers\\Frontend\\CartController' => $baseDir . '/app/Http/Controllers/Frontend/CartController.php',
@@ -135,8 +139,6 @@ return array(
     'App\\Http\\Controllers\\Frontend\\UserVendorReqeustController' => $baseDir . '/app/Http/Controllers/Frontend/UserVendorReqeustController.php',
     'App\\Http\\Controllers\\Frontend\\WishlistController' => $baseDir . '/app/Http/Controllers/Frontend/WishlistController.php',
     'App\\Http\\Controllers\\ModuloController' => $baseDir . '/app/Http/Controllers/ModuloController.php',
-    'App\\Http\\Controllers\\POS\\CuponController' => $baseDir . '/app/Http/Controllers/POS/CuponController.php',
-    'App\\Http\\Controllers\\POS\\PosController' => $baseDir . '/app/Http/Controllers/POS/PosController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Controllers\\StockController' => $baseDir . '/app/Http/Controllers/StockController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -2854,6 +2856,8 @@ return array(
     'Illuminate\\View\\ViewFinderInterface' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
     'Illuminate\\View\\ViewName' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewName.php',
     'Illuminate\\View\\ViewServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+    'LaravelDaily\\LaravelCharts\\Classes\\LaravelChart' => $vendorDir . '/laraveldaily/laravel-charts/src/Classes/LaravelChart.php',
+    'LaravelDaily\\LaravelCharts\\LaravelChartsServiceProvider' => $vendorDir . '/laraveldaily/laravel-charts/src/LaravelChartsServiceProvider.php',
     'Laravel\\Breeze\\BreezeServiceProvider' => $vendorDir . '/laravel/breeze/src/BreezeServiceProvider.php',
     'Laravel\\Breeze\\Console\\InstallCommand' => $vendorDir . '/laravel/breeze/src/Console/InstallCommand.php',
     'Laravel\\Breeze\\Console\\InstallsApiStack' => $vendorDir . '/laravel/breeze/src/Console/InstallsApiStack.php',

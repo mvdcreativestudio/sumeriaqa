@@ -13,12 +13,8 @@
 
         <div class="mt-4">
             <div class="d-flex justify-content-between">
-                {{-- <div>
-                    <i class="fas fa-check-circle text-success ml-1 tooltipped" title="En fecha" style="font-size: 1.5em;"></i><a href=""> En Fecha</a>
-                    <i class="fas fa-exclamation-circle text-warning ml-1 tooltipped" title="Por vencer" style="font-size: 1.5em;"></i><a href=""> Por Vencer</a>
-                    <i class="fas fa-times-circle text-danger ml-1 tooltipped" title="Vencido" style="font-size: 1.5em;"></i><a href=""> Vencida</a> 
-                </div> --}}
                 <div class="mb-3">
+                    <a href="">Ordenar por:</a>
                     <label for="selectSort"></label>
                     <div class="btn-group" role="group" aria-label="Ordenar por">
                         <button type="button" class="btn btn-secondary sort-button" data-column="id" data-order="asc">
@@ -30,17 +26,14 @@
                         <button type="button" class="btn btn-secondary sort-button" data-column="tipo" data-order="asc">
                             Tipo
                         </button>
-                        <button type="button" class="btn btn-secondary sort-button" data-column="fecha" data-order="asc">
-                            Creado
-                        </button>
                         <button type="button" class="btn btn-secondary sort-button" data-column="fecha_vencimiento" data-order="asc">
                             Vencimiento
                         </button>
-                        <button type="button" class="btn btn-secondary sort-button" data-column="monto" data-order="asc">
-                            Monto
-                        </button>
                         <button type="button" class="btn btn-secondary sort-button" data-column="estado" data-order="asc">
                             Estado
+                        </button>
+                        <button type="button" class="btn btn-secondary sort-button" data-column="monto" data-order="asc">
+                            Monto
                         </button>
                     </div>
                 </div>
@@ -126,7 +119,7 @@
                                     <span class="text-danger">{{ $movimiento->estado_vencimiento }}</span>
                                     @endif
                                 </td>
-                                <td>${{ number_format($movimiento->monto, 0, ',', '.') }}</td>
+                                <td>{{$settings->currency_icon}}{{ number_format($movimiento->monto, 0, ',', '.') }}</td>
                                 <td class="text-right">
                                     <form action="{{ route('contabilidad.marcar-como-pago', $movimiento->id) }}" method="POST" class="d-inline">
                                         @csrf
