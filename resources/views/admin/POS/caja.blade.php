@@ -70,7 +70,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {{-- {{ $products->links() }} --}}
+
                                 </div>
                                 <div id="grid-view-container" style="display: none;">
                                     <div class="row">
@@ -92,7 +92,7 @@
                                         @endforeach
                                     </div>
                                     <div class="mt-4">
-                                        {{-- {{ $products->links() }} --}}
+
                                     </div>
                                 </div>
                             </div>
