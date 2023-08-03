@@ -144,36 +144,9 @@
             <li><a class="nav-link" href="{{ route('admin.settings.index') }}"><i class="fas fa-wrench"></i><span>Configuración</span></a></li>
             @endif
 
-            @if($modulos['recursos-humanos']->enabled)
-            <!-- Header: Recursos Humanos -->
-            <li class="menu-header">Recursos Humanos</li>
-            <!-- RECURSOS HUMANOS-->
-            <li class="dropdown {{ setActive(['admin.recursos-humanos.*']) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user-group"></i><span>Recursos Humanos</span></a>
-                <ul class="dropdown-menu"> 
-                    <li class=" {{ setActive(['admin.recursos-humanos.dashboard']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.dashboard') }}">Dashboard</a></li>
-                    <li class=" {{ setActive(['admin.recursos-humanos.gestion']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.gestion') }}">Gestión de personal</a></li>
-                    <li class=" {{ setActive(['admin.recursos-humanos.salarios']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.salarios') }}">Salarios</a></li>
-                    <li class=" {{ setActive(['admin.recursos-humanos.horarios']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.horarios') }}">Horarios</a></li>
-                    <li class=" {{ setActive(['admin.recursos-humanos.vacaciones']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.vacaciones') }}">Vacaciones</a></li>
-                    <li class=" {{ setActive(['admin.recursos-humanos.faltas']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.faltas') }}">Faltas</a></li>
-                </ul>
-            </li>
-            @endif
+            
 
-            @if($modulos['pos']->enabled)
-            <!-- Header: Punto de venta -->
-            <li class="menu-header">Punto de venta</li>
-
-            <!-- POS -->
-            <li class="dropdown {{ setActive(['admin.pos.*']) }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cash-register"></i><span>POS</span></a>
-                <ul class="dropdown-menu"> 
-                    <li class="{{ setActive(['admin.pos.dashboard']) }}"><a class="nav-link" href="{{ route('admin.pos.dashboard') }}">Dashboard</a></li>
-                    <li class="{{ setActive(['admin.pos.caja']) }}"><a class="nav-link" href="{{ route('admin.pos.caja') }}">Point of Sale</a></li>
-                </ul>
-            </li>
-            @endif
+            
 
             @if($modulos['contabilidad']->enabled)
             <!-- Header: Contabilidad -->
@@ -214,6 +187,20 @@
             </li>
             @endif
 
+            @if($modulos['pos']->enabled)
+            <!-- Header: Punto de venta -->
+            <li class="menu-header">Punto de venta</li>
+
+            <!-- POS -->
+            <li class="dropdown {{ setActive(['admin.pos.*']) }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cash-register"></i><span>POS</span></a>
+                <ul class="dropdown-menu"> 
+                    <li class="{{ setActive(['admin.pos.dashboard']) }}"><a class="nav-link" href="{{ route('admin.pos.dashboard') }}">Dashboard</a></li>
+                    <li class="{{ setActive(['admin.pos.caja']) }}"><a class="nav-link" href="{{ route('admin.pos.caja') }}">Point of Sale</a></li>
+                </ul>
+            </li>
+            @endif
+
             @if($modulos['stock']->enabled)
             <!-- Header: Stock -->
             <li class="menu-header">Stock</li>
@@ -234,6 +221,23 @@
             <!-- Puntos -->
             <li class="{{ setActive(['admin.loyalty-program.*']) }}">
                 <a href="{{ route('admin.loyalty-program.loyalty') }}" class="nav-link"><i class="fas fa-leaf"></i><span>Puntos</span></a>
+            </li>
+            @endif
+
+            @if($modulos['recursos-humanos']->enabled)
+            <!-- Header: Recursos Humanos -->
+            <li class="menu-header">Recursos Humanos</li>
+            <!-- RECURSOS HUMANOS-->
+            <li class="dropdown {{ setActive(['admin.recursos-humanos.*']) }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user-group"></i><span>Recursos Humanos</span></a>
+                <ul class="dropdown-menu"> 
+                    <li class=" {{ setActive(['admin.recursos-humanos.dashboard']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.dashboard') }}">Dashboard</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.gestion']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.gestion') }}">Gestión de personal</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.salarios']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.salarios') }}">Salarios</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.horarios']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.horarios') }}">Horarios</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.vacaciones']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.vacaciones') }}">Vacaciones</a></li>
+                    <li class=" {{ setActive(['admin.recursos-humanos.faltas']) }} "><a class="nav-link" href="{{ route('admin.recursos-humanos.faltas') }}">Faltas</a></li>
+                </ul>
             </li>
             @endif
 
