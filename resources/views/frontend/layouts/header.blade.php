@@ -8,9 +8,9 @@
                 </div>
             </div>
             <div class="col-xl-2 col-7 col-md-8 col-lg-2">
-                <div class="wsus_logo_area">
-                    <a class="wsus__header_logo" href="{{url('/')}}">
-                        <img src="{{asset($logoSetting->logo)}}" alt="logo" class="img-fluid w-100">
+                <div class="wsus_logo_area align-middle">
+                    <a class="wsus__header_logo align-middle" href="{{url('/')}}">
+                        <img src="{{asset($logoSetting->logo)}}" alt="logo" class="img-fluid w-100 align-middle">
                     </a>
                 </div>
             </div>

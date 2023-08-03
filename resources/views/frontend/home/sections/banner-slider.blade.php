@@ -1,5 +1,4 @@
 <section id="wsus__banner">
-    <div class="container">
         <div class="row">
             <div class="col-xl-12">
                 <div class="wsus__banner_content">
@@ -21,5 +20,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
